@@ -6,7 +6,7 @@
 /*   By: tuaydin <tuaydin@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 09:23:59 by tuaydin           #+#    #+#             */
-/*   Updated: 2024/01/30 23:46:29 by tuaydin          ###   ########.fr       */
+/*   Updated: 2024/02/14 23:41:14 by tuaydin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,13 @@ char	*ft_strcapitalize(char *str)
 	flag = 1;
 	while (str[i] != '\0')
 	{
-		if ((str[i] <= 'z' && str[i] >= 'a') && flag == 1)
+		if (str[i] <= 'z' && str[i] >= 'a')
 		{
-			str[i] -= 32;
-			flag = 0;
+			if (flag == 1)
+			{
+				str[i] -= 32;
+				flag = 0;
+			}
 		}
 		else if ((str[i] <= '9' && str[i] >= '0'))
 			flag = 0;
